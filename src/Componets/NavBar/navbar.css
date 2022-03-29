@@ -1,0 +1,91 @@
+.containr {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.2fr 1.5fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "sidebar main main main"
+      "sidebar main main main"
+      "...... main main main";
+  
+    justify-content: center;
+    background-color: var(--primary-font-colour);
+    position: relative;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    margin: 3rem;
+    justify-content: space-between;
+    grid-gap: 4rem 4rem;
+    width: 90%;
+  }
+  
+  nav {
+    background-color: var( --cta-color);
+    grid-area: nav;
+    height: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    color: var(--primary-font-colour);
+    font-size: 1.5rem;
+    z-index: 1;
+  }
+  .card-prododuct-result {
+    position: absolute;
+    top: 5.5rem;
+    font-size: 2rem;
+    margin-left: 0px;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+  .search-data {
+    height: 2rem;
+    width: 22%;
+    padding: 8px 8px;
+    border-radius: 8px;
+    border: 2px solid var(--cta-color);
+  }
+  .fa-search {
+    position: absolute;
+    top: 35px;
+    margin-left: 22%;
+    color: var(--cta-color);
+  }
+  .fa-heart-half {
+    color: var(--primary-font-colour);
+  }
+  
+  .cart-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    padding: 3px;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--error-color);
+    border-radius: 50%;
+  }
+  li {
+    display: inline-block;
+    margin: 2rem;
+  }
+  
+  span {
+    margin: 10px;
+  }
+  input {
+    margin-left: 2rem;
+  }
+  .brand-img {
+    width: 10rem;
+    height: 4rem;
+   border-radius: 10px;
+  }
