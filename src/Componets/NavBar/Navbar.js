@@ -14,7 +14,7 @@ const Navbar = () => {
            Go-Wheel
            <img
              className="brand-img"
-             src="https://images.unsplash.com/photo-1523357585206-175e971f2ad9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80"
+             src="https://png.pngtree.com/png-clipart/20220213/original/pngtree-3d-checklist-icon-with-green-circle-png-image_7269452.png"
              alt=""
            />
          </h4>

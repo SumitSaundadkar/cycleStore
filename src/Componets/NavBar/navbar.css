@@ -47,8 +47,8 @@
     font-size: 2rem;
   }
   .search-data {
-    height: 2rem;
-    width: 25%;
+    height: 1.5rem;
+    width: 30%;
     padding: 8px 8px;
     border-radius: 8px;
     border: 2px solid var(--cta-color);
@@ -87,7 +87,7 @@
     margin-left: 2rem;
   }
   .brand-img {
-    width: 10rem;
-    height: 4rem;
-   border-radius: 10px;
+    width: 5rem;
+    height: 5rem;
+   border-radius: 80%;
   }
