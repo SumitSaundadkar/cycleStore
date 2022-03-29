@@ -23,11 +23,13 @@
   }
   
   nav {
-    background-color: var( --cta-color);
+    background-color: var( --info-color);
     grid-area: nav;
     height: 6rem;
     display: flex;
     justify-content: space-evenly;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     align-items: center;
     width: 100%;
     position: fixed;
@@ -46,7 +48,7 @@
   }
   .search-data {
     height: 2rem;
-    width: 22%;
+    width: 25%;
     padding: 8px 8px;
     border-radius: 8px;
     border: 2px solid var(--cta-color);
