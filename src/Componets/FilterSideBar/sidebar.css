@@ -1,0 +1,45 @@
+#filter-sidebar {
+    background-color: var(--info-color);
+    grid-area: sidebar;
+    margin-top: 6rem;
+    height: max-content;
+    width: 22%;
+    text-align: center;
+    color: var(--cta-color);
+    font-size: 1rem;
+    position: absolute;
+  }
+  .filter-sidebar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+  }
+  .filter-sidebar-price {
+    padding: 2rem 10px;
+  }
+  .filter-sidebar-range {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .price-range {
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+  .filter-category {
+    padding: 10px 2rem;
+    margin-top: 2rem;
+  }
+  .filter-item {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  .filter-item input {
+    height: 1.5rem;
+    width: 1.5rem;
+  }

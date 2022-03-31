@@ -1,0 +1,15 @@
+.content-page {
+    text-align: center;
+    display: inline-flex;
+    margin: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    top: 22rem;
+    left: 29%;
+    transform: translate(-50%, -50%);
+  }
+  img {
+    object-fit: cover;
+  
+    width: 50%;
+  }
