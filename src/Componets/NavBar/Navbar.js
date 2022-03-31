@@ -39,9 +39,7 @@ const Navbar = () => {
             
             <i className="fal fa-shopping-cart"></i>
             
-
-             
-            </li>
+           </li>
             </Link>
         
         </ul>

@@ -1,6 +1,4 @@
 import './sidebar.css';
-
-
 const FilterSideBar=() =>{
     return (
        <div> 
