@@ -13,7 +13,8 @@ export const products = [
     priceDiscount: 16000,
     priceOriginal: 17000,
     category: "Kid",
-    offer: 5 % "off"
+    offer: 5 % "off",
+    rating:"4"
   },
   {
     _id: uuid(),
@@ -22,7 +23,8 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 13000,
     offer: 7 % "off",
-    category: "Men"
+    category: "Men",
+    rating:"5"
   },
   {
     _id: uuid(),
@@ -31,7 +33,8 @@ export const products = [
     priceDiscount: 16000,
     priceOriginal: 17000,
     category: "Adventure",
-    offer: 3 % "off"
+    offer: 3 % "off",
+    rating:"3"
   },
   {
     _id: uuid(),
@@ -40,7 +43,8 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 12000,
     category: "Adventure",
-    offer: 4 % "off"
+    offer: 4 % "off",
+    rating:"4"
   },
   {
     _id: uuid(),
@@ -48,7 +52,8 @@ export const products = [
     title: "Off Road Cycle ",
     priceDiscount: 10880,
     priceOriginal: 12000,
-    offer: 3
+    offer: 8 ,
+    rating:"3"
   },
   {
     _id: uuid(),
@@ -57,7 +62,8 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 12000,
     category: "Girl",
-    offer: 3
+    offer: 6,
+    rating:"3"
   },
   {
     _id: uuid(),
@@ -66,7 +72,8 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 12000,
     category: "Adventure",
-    offer: 3
+    offer: 3,
+    rating:"2"
   },
   {
     _id: uuid(),
@@ -75,7 +82,8 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 12000,
     category: "Kid",
-    offer: 3
+    offer: 5,
+    rating:"5"
   },
   {
     _id: uuid(),
@@ -84,6 +92,7 @@ export const products = [
     priceDiscount: 10000,
     priceOriginal: 12000,
     category: "Girl",
-    offer: 3
+    offer: 3,
+    rating:"4"
   },
 ];

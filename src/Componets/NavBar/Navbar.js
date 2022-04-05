@@ -1,8 +1,12 @@
 import './navbar.css';
 import {Link} from "react-router-dom";
+import {useCart}  from '../../Contexts/cartContext';
+
 
 
 const Navbar = () => {
+  const {cartList}=useCart()
+  
   
   return (
 
@@ -33,9 +37,9 @@ const Navbar = () => {
             <i className="fas fa-heart"></i>
           </li>
           
-            <Link to="/Cart">
+            <Link to="/cart">
             <li>
-            <span className="cart-icon">0</span>
+            <span className="cart-icon">{cartList.cart.length}</span>
             
             <i className="fal fa-shopping-cart"></i>
             

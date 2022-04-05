@@ -2,9 +2,14 @@
 import './product.css';
 import { useEffect,useState } from 'react';
 import axios from 'axios';
+import {useFilterContext} from '../../Contexts/filter-context';
+import {useCart} from '../../Contexts/cartContext';
+
 
 const ProductCard =()=>{
   const[data,setData]=useState([]);
+  const {cartList,setCartList}=useCart();
+ 
   useEffect(() => {
   
     const getProducts = async () => {
@@ -18,19 +23,58 @@ const ProductCard =()=>{
     };
     getProducts();
   }, []);
- 
+
+  const { productListState } = useFilterContext();
+
+  const sortByPrice = (data, sortBy) => {
+    if (sortBy === "HIGH_TO_LOW") {
+      return [...data].sort((a, b) => b.priceDiscount - a.priceDiscount);
+    } else if (sortBy === "LOW_TO_HIGH") {
+      return [...data].sort((a, b) => a.priceDiscount - b.priceDiscount);
+    }
+    return data;
+  };
+
+  const filterByCategory = (products, categoryName) => {
+    if (categoryName.length !== 0) {
+      return products.filter((item) => categoryName.includes(item.category));
+    }
+    return products;
+  };
+
+  const byRating = (data, ratingCompare) => {
+    return data.filter((item) => item.rating >= ratingCompare);
+  };
+
+  
+  
+
+  const filteredProductList =  
+   filterByCategory( byRating(sortByPrice([...data], productListState.sortBy),productListState.rating) ,productListState.categoryName )
+
+
+  
+  
+     
+     
+  
+
+
+  
      return (
              <div>
-             {data &&
-             data.map((product) => (
+            <h2 className='product_length_heading'>Showing All Product <span className='product_length'>(Showing {filteredProductList.length} products.)</span></h2>
+             {filteredProductList &&
+             filteredProductList.map((product) => (
              <div className='content-page'>
              <div className="vertical-card">
              <div className="card-simple">
                <div className="card__container">
+              
                  <p className="card__body">
                    <img src={product.img} alt="" />
                    <h4>
-                     {product.title} <i className="far fa-heart"></i>
+                     {product.title} <i className= "far fa-heart" ></i>
                      <p>
                        <span className="price-discount">
                          ₹{product.priceDiscount}{" "}
@@ -39,14 +83,20 @@ const ProductCard =()=>{
                          ₹{product.priceOriginal}
                        </span>
                        <span className="offer">
-                   
-                         %OFF)
+                       
+                        {Math.floor(
+                          Math.abs((product.priceDiscount / product.priceOriginal) * 100 - 100)
+                        )}
+                        %OFF
                        </span>
+                       <span style={{backgroundColor:'lightgray',borderRadius:"5px"}}>{product.rating}<i style={{color:'yellow'}} class="fa fa-star" ></i></span>
                      </p>
                    </h4>
                    <span></span>
                    <div className="cart-button">
-                     <button  >
+                     <button onClick={() =>
+                      setCartList({ type: "ADD_TO_CART", payload: {product} })
+                    } >
                        <i className="fas fa-shopping-cart"></i>Add to cart
                      </button>
                    </div>

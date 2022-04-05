@@ -17,6 +17,18 @@
     position: absolute;
     z-index: 1;
 }
+.footer_bar{
+    display:flex;
+    position: absolute;
+    top:auto;
+    bottom: 3rem;
+   justify-content:center;
+   align-items: center;
+   width: 100%;
+}
+.my_Name{
+    color: var(--primary-font-colour);
+}
 
 
 
