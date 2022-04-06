@@ -1,11 +1,13 @@
 import './navbar.css';
 import {Link} from "react-router-dom";
 import {useCart}  from '../../Contexts/cartContext';
+import {useWishlistContext} from '../../Contexts/wishListContext';
 
 
 
 const Navbar = () => {
-  const {cartList}=useCart()
+  const {cartList}=useCart();
+  const {wishlistState}=useWishlistContext();
   
   
   return (
@@ -32,10 +34,10 @@ const Navbar = () => {
             <button className="btn btn-primary">Login</button>
           </li>
 
-          <li>
-            <span className="cart-icon">0</span>
-            <i className="fas fa-heart"></i>
-          </li>
+         <Link to="/wishlist" > <li>
+         <span className="cart-icon">{wishlistState.wishList.length}</span>
+         <i className="fas fa-heart"></i>
+       </li></Link>
           
             <Link to="/cart">
             <li>

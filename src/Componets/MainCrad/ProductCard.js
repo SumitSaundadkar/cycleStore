@@ -4,12 +4,15 @@ import { useEffect,useState } from 'react';
 import axios from 'axios';
 import {useFilterContext} from '../../Contexts/filter-context';
 import {useCart} from '../../Contexts/cartContext';
+import { Link } from 'react-router-dom';
+import {useWishlistContext} from '../../Contexts/wishListContext';
 
 
 const ProductCard =()=>{
   const[data,setData]=useState([]);
   const {cartList,setCartList}=useCart();
- 
+  const {wishlistState,wishlistDispatch}=useWishlistContext();
+  const {cart}=cartList
   useEffect(() => {
   
     const getProducts = async () => {
@@ -25,6 +28,7 @@ const ProductCard =()=>{
   }, []);
 
   const { productListState } = useFilterContext();
+  
 
   const sortByPrice = (data, sortBy) => {
     if (sortBy === "HIGH_TO_LOW") {
@@ -74,7 +78,10 @@ const ProductCard =()=>{
                  <p className="card__body">
                    <img src={product.img} alt="" />
                    <h4>
-                     {product.title} <i className= "far fa-heart" ></i>
+                   
+                     {product.title} <button onClick={() =>
+                      wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: {product} })
+                    }><i className= "far fa-heart" ></i></button>
                      <p>
                        <span className="price-discount">
                          ₹{product.priceDiscount}{" "}
@@ -92,19 +99,39 @@ const ProductCard =()=>{
                        <span style={{backgroundColor:'lightgray',borderRadius:"5px"}}>{product.rating}<i style={{color:'yellow'}} class="fa fa-star" ></i></span>
                      </p>
                    </h4>
-                   <span></span>
-                   <div className="cart-button">
-                     <button onClick={() =>
-                      setCartList({ type: "ADD_TO_CART", payload: {product} })
-                    } >
-                       <i className="fas fa-shopping-cart"></i>Add to cart
-                     </button>
-                   </div>
+               
+                   {cart.find((cartItem) => cartItem.product._id === product._id) ? (
+                    <div className="cart-button">
+                    <Link to='/cart'>
+                    <button>
+                    <i className="fas fa-shopping-cart"></i>Go to cart
+                     
+                    </button></Link>
+                  </div>
+                  ) : (
+                    <div className="cart-button">
+                    <button onClick={() =>
+                     setCartList({ type: "ADD_TO_CART", payload: {product} })
+                   } >
+                   <i className="fas fa-shopping-cart"></i> Add to cart
+                    </button>
+                  </div>
+                  )}
+
+
+                  
+
+                
+                  
+                  
+                 
+
+
                  </p>
                </div>
              </div>
            </div>
-             </div>
+          </div>
               ))}
                  
         </div>

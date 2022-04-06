@@ -10,6 +10,24 @@ const cartContext=createContext();
              return{...state,cart:[...state.cart,{...action.payload,qty:1}]};
          case "REMOVE_FROM_CART" :
              return {...state,cart:state.cart.filter((obj)=> obj.id != action.payload.id)}; 
+         case "INCREASE":
+                return {
+                  ...state,
+                  cart: state.cart.map((item) =>
+                    item._id === action.payload._id
+                      ? { ...item, qty: item.qty + 1 }
+                      : item
+                  ),
+                }; 
+         case "DECREASE":
+                return {
+                  ...state,
+                  cart: state.cart.map((item) =>
+                    item._id === action.payload._id
+                      ? { ...item, qty: item.qty - 1 }
+                      : item
+                  ),
+                }; 
              
            
      

@@ -14,7 +14,8 @@ export const products = [
     priceOriginal: 17000,
     category: "Kid",
     offer: 5 % "off",
-    rating:"4"
+    rating:"4",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -24,7 +25,8 @@ export const products = [
     priceOriginal: 13000,
     offer: 7 % "off",
     category: "Men",
-    rating:"5"
+    rating:"5",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -34,7 +36,8 @@ export const products = [
     priceOriginal: 17000,
     category: "Adventure",
     offer: 3 % "off",
-    rating:"3"
+    rating:"3",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -44,7 +47,8 @@ export const products = [
     priceOriginal: 12000,
     category: "Adventure",
     offer: 4 % "off",
-    rating:"4"
+    rating:"4",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -53,7 +57,8 @@ export const products = [
     priceDiscount: 10880,
     priceOriginal: 12000,
     offer: 8 ,
-    rating:"3"
+    rating:"3",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -63,7 +68,8 @@ export const products = [
     priceOriginal: 12000,
     category: "Girl",
     offer: 6,
-    rating:"3"
+    rating:"3",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -73,7 +79,8 @@ export const products = [
     priceOriginal: 12000,
     category: "Adventure",
     offer: 3,
-    rating:"2"
+    rating:"2",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -83,7 +90,8 @@ export const products = [
     priceOriginal: 12000,
     category: "Kid",
     offer: 5,
-    rating:"5"
+    rating:"5",
+    inWishlist: false,
   },
   {
     _id: uuid(),
@@ -93,6 +101,7 @@ export const products = [
     priceOriginal: 12000,
     category: "Girl",
     offer: 3,
-    rating:"4"
+    rating:"4",
+    inWishlist: false,
   },
 ];

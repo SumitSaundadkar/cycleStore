@@ -1,0 +1,25 @@
+.content-page {
+    text-align: center;
+    display: inline-flex;
+    margin: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    top: 22rem;
+    left: 29%;
+    transform: translate(-50%, -50%);
+  }
+  img {
+    object-fit: cover;
+  
+    width: 50%;
+  }
+  .product_length_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 8rem;
+  }
+  .product_length{
+    font-size: medium;
+  }

@@ -35,13 +35,15 @@ const MyCartPage=()=>{
              <div className="cart-quantity">
                <div className="cart-control">
                  Quantity:
-                 <button
-                  
-                 >
+                 <button className="btn btn-info"
+                 onClick={()=>setCartList({type:"DECREASE",payload:item})}
+                  >
                    -
                  </button>
                  <span className="count">{item.qty}</span>
-                 <button
+                 <button className="btn btn-info"
+
+                 onClick={()=>setCartList({type:"INCREASE",payload:item})}
                   
                  >
                    +

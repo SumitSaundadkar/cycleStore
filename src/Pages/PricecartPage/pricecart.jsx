@@ -3,20 +3,37 @@ import {useCart} from "../../Contexts/cartContext";
 
 const PriceCartPage=()=>{
   const {cartList}=useCart();
-
-  const priceCal = cartList.cart.reduce(
-    ({ Price, Discount }, item) => {
-      Price += item.priceOriginal * item.qty;
-      Discount += (item.priceOriginal - item.priceDiscount) * item.qty;
-      return { Price, Discount };
+ 
+  const totalPriceByDiscount = cartList.cart.reduce(
+    (acu, value) => {
+      return {
+        ...acu,
+        price:
+          acu.price +
+          Number(value.product.priceDiscount) * value.qty,
+      };
     },
-    {
-      Price: 0,
-      Discount: 0,
-      Delivery: 0,
-      Total: 0
-    }
+    { price: 0 }
   );
+
+  const totalMRP = cartList.cart.reduce(
+    (acu, value) => {
+      return {
+        ...acu,
+        price: acu.price +Number (value.product.priceOriginal) * value.qty,
+      };
+    },
+    { price: 0 }
+  );
+
+  
+  
+
+  const discountOnMRP = totalMRP.price - totalPriceByDiscount.price;
+
+  
+    
+  
     return(
         <div className="cart-price-cont">
         <div className="cart-price-card">
@@ -25,12 +42,12 @@ const PriceCartPage=()=>{
           </div>
 
           <div className="cart-pricing-item">
-            <span>Price (2 items)</span>
-            <span>{priceCal.Price}</span>
+            <span>Price ({}) :{totalMRP.price}</span>
+            
           </div>
           <div className="cart-pricing-item">
-            <span>Discount</span>
-            <span>{priceCal.Discount}</span>
+            <span>Discount:₹{discountOnMRP}</span>
+           
           </div>
           <div className="cart-pricing-item">
             <span>Delivery Charges</span>
@@ -38,11 +55,11 @@ const PriceCartPage=()=>{
           </div>
 
           <div className="cart-total-amount">
-            <span>Total Amount: Rs.{priceCal.Price - priceCal.Discount}</span>
+            <span>Total Amount: Rs.{totalPriceByDiscount.price}</span>
           </div>
 
           <div className="cart-saving-money">
-            <span>You Will Save Rs.{priceCal.Discount} on this order.</span>
+            <span>You Will Save Rs.{discountOnMRP} on this order.</span>
 
             <div className="btn-order">Place Order</div>
           </div>
