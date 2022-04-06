@@ -117,17 +117,7 @@ const ProductCard =()=>{
                     </button>
                   </div>
                   )}
-
-
-                  
-
-                
-                  
-                  
-                 
-
-
-                 </p>
+               </p>
                </div>
              </div>
            </div>
