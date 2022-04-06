@@ -13,3 +13,13 @@
   
     width: 50%;
   }
+  .product_length_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 8rem;
+  }
+  .product_length{
+    font-size: medium;
+  }

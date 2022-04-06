@@ -1,6 +1,22 @@
-import './pricecart.css'
+import './pricecart.css';
+import {useCart} from "../../Contexts/cartContext";
 
 const PriceCartPage=()=>{
+  const {cartList}=useCart();
+
+  const priceCal = cartList.cart.reduce(
+    ({ Price, Discount }, item) => {
+      Price += item.priceOriginal * item.qty;
+      Discount += (item.priceOriginal - item.priceDiscount) * item.qty;
+      return { Price, Discount };
+    },
+    {
+      Price: 0,
+      Discount: 0,
+      Delivery: 0,
+      Total: 0
+    }
+  );
     return(
         <div className="cart-price-cont">
         <div className="cart-price-card">
