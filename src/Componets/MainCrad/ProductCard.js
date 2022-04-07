@@ -79,9 +79,11 @@ const ProductCard =()=>{
                    <img src={product.img} alt="" />
                    <h4>
                    
-                     {product.title} <button onClick={() =>
-                      wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: {product} })
+                     {product.title} <button 
+                     onClick={() =>
+                     { wishlistDispatch({ type: "ADD_TO_WISHLIST", payload:{product}})}
                     }><i className= "far fa-heart" ></i></button>
+                      
                      <p>
                        <span className="price-discount">
                          ₹{product.priceDiscount}{" "}
@@ -111,12 +113,24 @@ const ProductCard =()=>{
                   ) : (
                     <div className="cart-button">
                     <button onClick={() =>
-                     setCartList({ type: "ADD_TO_CART", payload: {product} })
-                   } >
-                   <i className="fas fa-shopping-cart"></i> Add to cart
-                    </button>
+                      setCartList({ type: "ADD_TO_CART", payload: {product} })
+                    } >
+                    <i className="fas fa-shopping-cart"></i> Add to cart
+                     </button>
                   </div>
                   )}
+
+
+                  
+
+
+                
+
+
+
+
+
+
                </p>
                </div>
              </div>

@@ -2,10 +2,17 @@ import {useCart} from "../../Contexts/cartContext";
 import './cart.css';
 import { Link } from "react-router-dom";
 import { PriceCartPage } from "../../Pages/PricecartPage/pricecart";
+import {useWishlistContext} from "../../Contexts/wishListContext";
 
 const MyCartPage=()=>{
   const {cartList,setCartList}=useCart();
+  const {wishlistState,wishlistDispatch}=useWishlistContext();
  const {cart}=cartList;
+
+ const {wishList}=wishlistState;
+
+ console.log (wishList);
+ 
 
  
  
@@ -50,8 +57,24 @@ const MyCartPage=()=>{
                  </button>
                </div>
              </div>
+             {wishList.find(
+              (wishlistItem) => wishlistItem._id === item._id
+            ) ? (
+              <Link  to="/Wishlist">
+                <button className="btn btn-info">Go to wishlist</button>
+              </Link>
+            ) : (
+              <button
+                onClick={() =>
+                  wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
+                }
+                className="btn btn-info"
+              >
+              <i className= "far fa-heart" ></i> Move to wishlist
+              </button>
+            )}
             
-             <button className="btn btn-danger"
+             <button className="btn btn-info"
               onClick={()=>setCartList({type:"REMOVE_FROM_CART",payload:item})}
              >
                <i className="fas fa-trash"></i>
