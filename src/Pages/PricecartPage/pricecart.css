@@ -7,8 +7,8 @@
   border-radius: 2rem;
   position: absolute;
   text-align: center;
-  left: 50%;
-  top: 20%;
+  left: 60%;
+  top: 18%;
   
   
 }
@@ -19,11 +19,11 @@
   flex-direction: column;
   border-radius: 2rem;
   margin: 10px;
-  width: 28rem;
+  width: 25rem;
   height: 28rem;
   background-color: var(--primary-font-colour);;
   padding: 10px;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .cart-price-heading {
   

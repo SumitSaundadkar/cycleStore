@@ -5,6 +5,7 @@ import { StorePage } from "./Componets/StorePage/store";
 import { MyCartPage } from "./Pages/AddToCardCart/cart";
 import {WishlistPage} from './Pages/wishlispage/wishList'
 import { BrowserRouter, Routes, Route,Link} from "react-router-dom";
+import {LoginPage} from './Pages/LoginPage/Login';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
    <Route path="/store" element={<StorePage/>} / >
    <Route path="/cart" element={<MyCartPage/>} / >
    <Route path="/wishlist" element={<WishlistPage/>} / >
+   <Route path="/login" element={<LoginPage/>} / >
    
  
    
