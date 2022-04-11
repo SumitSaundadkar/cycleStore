@@ -1,0 +1,68 @@
+
+
+.login-page {
+    padding: 2.5rem;
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 10px 10px 12px 10px var(--btn-secondary-color);
+    width: 20rem;
+    height: 25rem;
+    background-color: var(--primary-font-colour);
+    border-radius: 10px;
+  }
+  .login-page-heading {
+    display: flex;
+    justify-content: center;
+    font: 1.5rem sans-serif;
+  }
+  .login-page-mail {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    letter-spacing: 1px;
+    padding: 5px;
+    font-size: 1rem;
+}
+  .login-page-mail input {
+    padding: 10px;
+    font: 1em sans-serif;
+    border-radius: 5px;
+    outline: none;
+    width: 90%;
+    margin: 1rem 0;
+    border: 2px solid rgb(226, 226, 223);
+  }
+  .login-page-remeber-me {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+  }
+  .login-page-remeber-me span:nth-child(3n) {
+    color: var(--btn-primary-color);
+  }
+  .login-page-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    height: 30px;
+    background-color: var(--btn-primary-color);
+    font-size: 1rem ;
+  }
+  .login-page-create-account {
+   font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+span {
+  margin: 10px;
+}
+input {
+  margin-left: 2rem;
+}

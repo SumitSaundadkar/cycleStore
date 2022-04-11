@@ -12,7 +12,7 @@
   
   .cart-page {
     display: flex;
-    justify-content: flex-start;
+   margin-left: 3rem;
     align-items: center;
     top: 2rem;
     position: relative;
@@ -24,8 +24,8 @@
     border-style: groove;
     align-items: center;
     margin: 10px;
-    width: 28rem;
-    height: 22rem;
+    width: 40rem;
+    height: 20rem;
     background-color: var(--primary-font-colour);
     padding: 10px;
   }

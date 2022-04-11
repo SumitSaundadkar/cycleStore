@@ -30,18 +30,21 @@ const Navbar = () => {
         <input className="search-data" type="text" placeholder="serach" />
         <i className="fal fa-search"></i>
         <ul>
-          <li>
-            <button className="btn btn-primary">Login</button>
-          </li>
+        <Link to='/login'>
+        <li>
+        <button className="btn btn-primary">Login</button>
+      </li>
+        </Link>
+         
 
          <Link to="/wishlist" > <li>
-         <span className="cart-icon">{wishlistState.wishList.length}</span>
+         <span className="cart-icon">{wishlistState.length}</span>
          <i className="fas fa-heart"></i>
        </li></Link>
           
             <Link to="/cart">
             <li>
-            <span className="cart-icon">{cartList.cart.length}</span>
+            <span className="cart-icon">{cartList.length}</span>
             
             <i className="fal fa-shopping-cart"></i>
             

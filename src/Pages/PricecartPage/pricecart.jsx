@@ -4,23 +4,23 @@ import {useCart} from "../../Contexts/cartContext";
 const PriceCartPage=()=>{
   const {cartList}=useCart();
  
-  const totalPriceByDiscount = cartList.cart.reduce(
+  const totalPriceByDiscount = cartList.reduce(
     (acu, value) => {
       return {
         ...acu,
         price:
           acu.price +
-          Number(value.product.priceDiscount) * value.qty,
+          Number(value.priceDiscount) * value.qty,
       };
     },
     { price: 0 }
   );
 
-  const totalMRP = cartList.cart.reduce(
+  const totalMRP = cartList.reduce(
     (acu, value) => {
       return {
         ...acu,
-        price: acu.price +Number (value.product.priceOriginal) * value.qty,
+        price: acu.price +Number (value.priceOriginal) * value.qty,
       };
     },
     { price: 0 }

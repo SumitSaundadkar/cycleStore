@@ -7,33 +7,29 @@ import {useWishlistContext} from "../../Contexts/wishListContext";
 const MyCartPage=()=>{
   const {cartList,setCartList}=useCart();
   const {wishlistState,wishlistDispatch}=useWishlistContext();
- const {cart}=cartList;
 
- const {wishList}=wishlistState;
-
- console.log (wishList);
  
 
  
  
   return(
     <div>
-    { cart.length ? (cart.map((item)=>{
+    { cartList.length ? (cartList.map((item)=>{
       return(
        <div className="cart_container" >
        <div className="cart-page">
          <div className="cart-section">
-           <img src={item.product.img} alt="img" />
+           <img src={item.img} alt="img" />
            <div className="cart-price-offer">
-             <h3 className="tag-name">{item.product.title}</h3>
-             <span className="tag-price">
-               Offer Price: ₹{item.product.priceDiscount}
+             <h3 className="tag-name">{item.title}</h3>
+             <span className="tag-price"> 
+               Offer Price: ₹{item.priceDiscount}
              </span>
              <span className="tag-offer">
-               ₹{item.product.priceOriginal}(
+               ₹{item.priceOriginal}(
                {Math.floor(
                  Math.abs(
-                   (item.product.priceDiscount / item.product.priceOriginal) * 100 -
+                   (item.priceDiscount / item.priceOriginal) * 100 -
                      100
                  )
                )}
@@ -57,7 +53,7 @@ const MyCartPage=()=>{
                  </button>
                </div>
              </div>
-             {wishList.find(
+             {wishlistState.find(
               (wishlistItem) => wishlistItem._id === item._id
             ) ? (
               <Link  to="/Wishlist">
@@ -68,13 +64,13 @@ const MyCartPage=()=>{
                 onClick={() =>
                   wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: item })
                 }
-                className="btn btn-info"
+                className="btn btn-primary"
               >
               <i className= "far fa-heart" ></i> Move to wishlist
               </button>
             )}
             
-             <button className="btn btn-info"
+             <button className="btn btn-primary"
               onClick={()=>setCartList({type:"REMOVE_FROM_CART",payload:item})}
              >
                <i className="fas fa-trash"></i>
@@ -99,7 +95,7 @@ const MyCartPage=()=>{
     </h1>)
       
   }
-  <div>{cartList.cart.length > 0 && <PriceCartPage />}</div>
+  <div>{cartList.length > 0 && <PriceCartPage />}</div>
   </div>
     
    
