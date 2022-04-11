@@ -5,11 +5,10 @@ const WishlistContext = createContext(null);
 const wishlistReducerFun = (state, action) => {
   switch (action.type) {
     case "ADD_TO_WISHLIST":
-      
-        return [...state,{...action.payload,inWishlist:true}]
-     
+      return [...state, { ...action.payload, inWishlist: true }];
+
     case "REMOVE_FROM_WISHLIST":
-      return state.filter((item) => item._id !== action.payload._id); 
+      return state.filter((item) => item._id !== action.payload._id);
     default:
       return state;
   }

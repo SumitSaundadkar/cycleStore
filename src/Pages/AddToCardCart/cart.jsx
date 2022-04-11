@@ -7,12 +7,7 @@ import {useWishlistContext} from "../../Contexts/wishListContext";
 const MyCartPage=()=>{
   const {cartList,setCartList}=useCart();
   const {wishlistState,wishlistDispatch}=useWishlistContext();
-
- 
-
- 
- 
-  return(
+ return(
     <div>
     { cartList.length ? (cartList.map((item)=>{
       return(

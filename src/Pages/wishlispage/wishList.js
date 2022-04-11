@@ -85,8 +85,6 @@ const WishlistPage = () => {
                       </div>
                       
                     )}
-                    
-                    
                   </p>
                 </div>
               </div>
