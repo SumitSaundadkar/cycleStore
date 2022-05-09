@@ -27,8 +27,9 @@ const LoginPage = () => {
       </div>
 
       <div className="login-page-btn">Login</div>
+      <div className="login-page-btn">Login as Guset</div>
 
-      <div className="login-page-create-account">Create New Account</div>
+      <div className="login-page-create-account">Don't have an account</div>
     </div>
   );
 };
