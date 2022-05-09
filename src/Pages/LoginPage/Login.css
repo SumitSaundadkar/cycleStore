@@ -1,16 +1,20 @@
 
 
 .login-page {
-    padding: 2.5rem;
-    position: absolute;
-    top: 8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 10px 10px 12px 10px var(--btn-secondary-color);
-    width: 20rem;
-    height: 25rem;
-    background-color: var(--primary-font-colour);
-    border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 10px 10px 12px 10px var(--btn-secondary-color);
+  width: 17rem;
+  height: 25rem;
+  background-color: var(--primary-font-colour);
+  border-radius: 10px;
   }
   .login-page-heading {
     display: flex;
@@ -30,8 +34,7 @@
     font: 1em sans-serif;
     border-radius: 5px;
     outline: none;
-    width: 90%;
-    margin: 1rem 0;
+    width: 70%;
     border: 2px solid rgb(226, 226, 223);
   }
   .login-page-remeber-me {
@@ -47,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     margin-top: 2rem;
     height: 30px;
     background-color: var(--btn-primary-color);
