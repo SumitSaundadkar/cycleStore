@@ -55,6 +55,7 @@
     height: 30px;
     background-color: var(--btn-primary-color);
     font-size: 1rem ;
+    cursor: pointer;
   }
   .login-page-create-account {
    font-size: small;
@@ -68,4 +69,7 @@ span {
 }
 input {
   margin-left: 2rem;
+}
+.abc{
+  top:8rem
 }

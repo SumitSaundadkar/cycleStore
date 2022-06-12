@@ -2,10 +2,22 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Contexts/cartContext";
 import { useWishlistContext } from "../../Contexts/wishListContext";
+import { useAuthContext } from "../../Contexts/authContext";
 
 const Navbar = () => {
   const { cartList } = useCart();
-  const { wishlistState } = useWishlistContext();
+  const { wishlist } = useWishlistContext();
+  const { auth, setAuth } = useAuthContext();
+
+  const logouthandler = () => {
+    localStorage.removeItem("TOKEN");
+    localStorage.removeItem("USER_INFO");
+    setAuth({
+      loginStatus: false,
+      token: localStorage.getItem("TOKEN"),
+      user: JSON.parse(localStorage.getItem("USER_INFO")),
+    });
+  };
 
   return (
     <nav>
@@ -24,16 +36,24 @@ const Navbar = () => {
       <input className="search-data" type="text" placeholder="serach" />
       <i className="fal fa-search"></i>
       <ul>
-        <Link to="/login">
+        {auth.loginStatus ? (
           <li>
-            <button className="btn btn-primary">Login</button>
+            <button onClick={logouthandler} className="btn btn-primary">
+              LogOut
+            </button>
           </li>
-        </Link>
+        ) : (
+          <Link to="/login">
+            <li>
+              <button className="btn btn-primary">Login</button>
+            </li>
+          </Link>
+        )}
 
         <Link to="/wishlist">
           {" "}
           <li>
-            <span className="cart-icon">{wishlistState.length}</span>
+            <span className="cart-icon">{wishlist.length}</span>
             <i className="fas fa-heart"></i>
           </li>
         </Link>
