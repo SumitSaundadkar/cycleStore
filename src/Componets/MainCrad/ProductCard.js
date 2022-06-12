@@ -3,14 +3,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFilterContext } from "../../Contexts/filter-context";
 import { useCart } from "../../Contexts/cartContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useWishlistContext } from "../../Contexts/wishListContext";
+import { useAuthContext } from "../../Contexts/authContext";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const [data, setData] = useState([]);
-  const { cartList, setCartList } = useCart();
-  const { wishlistState, wishlistDispatch } = useWishlistContext();
+  const { cartList, addProductToCart } = useCart();
+  //const { wishlistState, wishlistDispatch } = useWishlistContext();
+  const { addWishListCart } = useWishlistContext();
   const { cart } = cartList;
+
+  const navigate = useNavigate();
+  const { auth } = useAuthContext();
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -73,12 +78,13 @@ const ProductCard = () => {
                     <h4>
                       {product.title}{" "}
                       <button
-                        onClick={() => {
-                          wishlistDispatch({
-                            type: "ADD_TO_WISHLIST",
-                            payload: product ,
-                          });
-                        }}
+                        onClick={() =>
+                          // wishlistDispatch({
+                          //   type: "ADD_TO_WISHLIST",
+                          //   payload: product,
+                          // });
+                          addWishListCart(product)
+                        }
                       >
                         <i className="far fa-heart"></i>
                       </button>
@@ -125,10 +131,9 @@ const ProductCard = () => {
                       <div className="cart-button">
                         <button
                           onClick={() =>
-                            setCartList({
-                              type: "ADD_TO_CART",
-                              payload:  product ,
-                            })
+                            auth.loginStatus
+                              ? addProductToCart(product)
+                              : navigate("/login")
                           }
                         >
                           <i className="fas fa-shopping-cart"></i> Add to cart
